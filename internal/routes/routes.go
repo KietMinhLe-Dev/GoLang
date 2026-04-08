@@ -1,28 +1,14 @@
 package routes
 
 import (
-	"net/http"
-
-	"GO/internal/modules/example"
-
 	"github.com/gin-gonic/gin"
 )
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
-	// Global Middleware
+	// Dòng này có nghĩa là nếu có lỗi xảy ra thì sẽ tự động recover lại
 	r.Use(gin.Recovery())
-
-	// Example routes
-	example.RegisterRoutes(r)
-
-	// Basic route
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
 
 	return r
 }

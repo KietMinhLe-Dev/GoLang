@@ -12,8 +12,8 @@ func main() {
 	// 1. Load config
 	connect := config.LoadConfig()
 
-	// 2. Initialize DB
-	db.ConnnectDB(connect)
+	// 2. Kết nối DB
+	db.ConnectDB(connect)
 
 	// 3. Setup Router
 	r := routes.SetupRouter()
